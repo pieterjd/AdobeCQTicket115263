@@ -2,4 +2,5 @@
 <workspaceFilter version="1.0">
     <filter root="/apps/myproject"/>
     <filter root="/etc/tags" mode="merge"/>
+    <filter root="/content/geometrixx-outdoors/en/test" mode="merge"/>
 </workspaceFilter>
