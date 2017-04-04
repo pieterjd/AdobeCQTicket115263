@@ -1,30 +1,27 @@
 Adobe CQ Ticket 115263
 ========
 
-This a content package project generated using the multimodule-content-package-archetype.
 
-Building
---------
+# Overview
+This is the repository that belongs to Adobe CQ Ticket 115263.
 
-This project uses Maven for building. Common commands:
+It contains:
+* sample tag collections in /etc/tags
+** articles
+** Review
+** testing
+* a component called testcomponent in apps/myproject/components/testcomponent.  This component has a dialog containing one tab (Review Process). This tab
+contains amongs others a widget for selecting a tag from the tag collection 'review'. Bot the classic dialog (dialog.xml) as the touch UI version (cq:dialog)
+are available.
 
-From the root directory, run ``mvn -PautoInstallPackage clean install`` to build the bundle and content package and install to a CQ instance.
+# Recap of the issues
 
-From the bundle directory, run ``mvn -PautoInstallBundle clean install`` to build *just* the bundle and install to a CQ instance.
+* autocomplete search not limited to rootpath in Touch UI: The autocomplete textfield is not limited to the Review tags. It shows tags from other collections as well;
+* tagcloud not limited to rootpath in Touch UI:  The tagcloud below the textfield is not limited to the Review tags. It shows tags from other collections as well;
+* removal of tags does not work in Touch UI
 
-Using with VLT
---------------
 
-To use vlt with this project, first build and install the package to your local CQ instance as described above. Then cd to `content/src/main/content/jcr_root` and run
 
-    vlt --credentials admin:admin checkout -f ../META-INF/vault/filter.xml --force http://localhost:4502/crx
 
-Once the working copy is created, you can use the normal ``vlt up`` and ``vlt ci`` commands.
-
-Specifying CRX Host/Port
-------------------------
-
-The CRX host and port can be specified on the command line with:
-mvn -Dcrx.host=otherhost -Dcrx.port=5502 <goals>
 
 
