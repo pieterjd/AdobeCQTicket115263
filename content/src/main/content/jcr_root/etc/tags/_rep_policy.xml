@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:crx="http://www.day.com/crx/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:rep="internal"
+    jcr:primaryType="rep:ACL">
+    <allow
+        jcr:primaryType="rep:GrantACE"
+        rep:principalName="tag-administrators"
+        rep:privileges="{Name}[jcr:modifyAccessControl,jcr:read,jcr:versionManagement,crx:replicate,jcr:lockManagement,rep:write,jcr:readAccessControl]"/>
+    <allow0
+        jcr:primaryType="rep:GrantACE"
+        rep:principalName="everyone"
+        rep:privileges="{Name}[jcr:read]">
+        <rep:restrictions
+            jcr:primaryType="rep:Restrictions"
+            rep:glob=""/>
+    </allow0>
+    <allow1
+        jcr:primaryType="rep:GrantACE"
+        rep:principalName="tag-garbage-collection-service"
+        rep:privileges="{Name}[jcr:read,crx:replicate,rep:write]"/>
+    <allow2
+        jcr:primaryType="rep:GrantACE"
+        rep:principalName="tag-validation-service"
+        rep:privileges="{Name}[jcr:read]"/>
+    <allow3
+        jcr:primaryType="rep:GrantACE"
+        rep:principalName="translation-job-service"
+        rep:privileges="{Name}[jcr:read,jcr:modifyProperties]"/>
+</jcr:root>
