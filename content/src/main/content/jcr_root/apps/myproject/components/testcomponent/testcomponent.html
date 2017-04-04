@@ -1,1 +1,10 @@
-Rendering the testcomponent
+<h3>Rendering the testcomponent</h3>
+<h4>Tags</h4>
+<ul data-sly-list="${properties['cq:tags']}">
+    <li>${item}</li>
+</ul>
+<h4>Available properties</h4>
+<dl data-sly-list.key="${properties}">
+    <dt>${key}</dt>
+    <dd>${properties[key]}</dd>
+</dl>
