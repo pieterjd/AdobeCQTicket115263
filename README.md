@@ -14,7 +14,7 @@ It contains:
   * testing
 * a component called testcomponent in apps/myproject/components/testcomponent.  This component has a dialog containing one tab (Review Process). This tab
 contains amongs others a widget for selecting a tag from the tag collection 'review'. Bot the classic dialog (dialog.xml) as the touch UI version (cq:dialog) are available.
-* a testpage called test under /content/geometrixx-outdoors/en
+* a testpage called test under /content/geometrixx-outdoors/en that contains this testcomponent
 
 # Recap of the issues
 
