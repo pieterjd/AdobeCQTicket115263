@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Review Process"
+          sling:resourceType="granite/ui/components/foundation/section">
+    <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+            margin="{Boolean}false"/>
+    <items jcr:primaryType="nt:unstructured">
+        <reviewdate
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/form/datepicker"
+                type="datetime"
+                fieldLabel="Review Date"
+                name="./reviewDate"/>
+        <reviewfrequency
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/form/select"
+                fieldLabel="Review frequency"
+                name="./reviewFrequency"
+                multiple="false">
+            <items jcr:primaryType="nt:unstructured">
+                <monthly jcr:primaryType="nt:unstructured"
+                         text="Monthly"
+                         value="1"/>
+                <quarterly jcr:primaryType="nt:unstructured"
+                           text="Quarterly"
+                           value="3"/>
+                <halfyearly jcr:primaryType="nt:unstructured"
+                            text="Half-yearly"
+                            value="6"/>
+                <ninemonthly jcr:primaryType="nt:unstructured"
+                             text="Nine-monthly"
+                             value="9"/>
+                <yearly jcr:primaryType="nt:unstructured"
+                        text="Yearly"
+                        value="12"/>
+            </items>
+        </reviewfrequency>
+
+        <!--
+        add an id property, because the basic tab also has a tagspicker widget
+                and that widget does not need validation.
+         -->
+        <reviewstate
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="cq/gui/components/common/tagspicker"
+                fieldLabel="Review State"
+                name="./cq:tags"
+                rootPath="/etc/tags/Review"
+                id="reviewstate"/>
+
+        <!--
+        <reviewstate
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/form/select"
+                fieldLabel="Review State"
+                name="./reviewTag">
+                <datasource
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/common/datasources/tags"
+                        namespaces="[Review]"/>
+
+        </reviewstate>
+        -->
+        <nextreviewdate
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/form/datepicker"
+                type="datetime"
+                fieldDescription="When this is filled out, it overrides the selected review frequency"
+                fieldLabel="Next Review Date"
+                name="./nextReviewDate"/>
+
+    </items>
+</jcr:root>
